@@ -23,7 +23,7 @@ public class JGActivity extends Activity {
 
     private LinearLayout linear;
     private ImageView id_ball;
-    private Button test1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +47,13 @@ public class JGActivity extends Activity {
 
         linear = (LinearLayout) findViewById(R.id.linear);
         id_ball = (ImageView) findViewById(R.id.id_ball);
-        test1 = (Button) findViewById(R.id.test1);
+        Button test1 = (Button) findViewById(R.id.test1);
         TextView test2 = (Button) findViewById(R.id.test2);
         TextView test3 = (Button) findViewById(R.id.test3);
         test1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //动画测试
+                //搜索栏滑动动画测试
                 Intent intent = new Intent(JGActivity.this, VacationHomeActivity.class);
                 JGActivity.this.startActivity(intent);
 

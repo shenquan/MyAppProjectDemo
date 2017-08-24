@@ -32,7 +32,7 @@
         android:id="@+id/test1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="动画测试" />
+        android:text="搜索栏滑动动画测试" />
 
     <Button
         android:id="@+id/test2"
