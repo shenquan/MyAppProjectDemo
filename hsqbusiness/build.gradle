@@ -28,4 +28,10 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
     testCompile 'junit:junit:4.12'
+
+    //对于外部包的依赖放在business中
+    compile 'com.android.support:multidex:1.0.1'
+
+
+
 }
