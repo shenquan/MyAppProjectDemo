@@ -1,5 +1,7 @@
 package com.example.sqhan.myapplication1;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,11 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.module1.activity.Activity1;
-import com.example.module1.util.AndroidUtil;
+import com.my.flowlayout.JGActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Context mContext;
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -41,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.app_activity_main);
+        mContext = this;
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -59,11 +61,16 @@ public class MainActivity extends AppCompatActivity {
         mTextMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AndroidUtil.showToast(MainActivity.this, "打开新的Activity");
-                /*Intent intent = new Intent(MainActivity.this, SelfActivity.class);
-                startActivity(intent);*/
+                /*AndroidUtil.showToast(MainActivity.this, "打开新的Activity");
+                *//*Intent intent = new Intent(MainActivity.this, SelfActivity.class);
+                startActivity(intent);*//*
                 Intent intent = new Intent(MainActivity.this, Activity1.class);
+                startActivity(intent);*/
+
+                Intent intent = new Intent(mContext, JGActivity.class);
                 startActivity(intent);
+
+
             }
         });
 //        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

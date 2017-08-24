@@ -103,6 +103,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(':module1')
     compile project(':libraries:mylibrary1')
+    compile project(':hsqanimation')
 }
 
 

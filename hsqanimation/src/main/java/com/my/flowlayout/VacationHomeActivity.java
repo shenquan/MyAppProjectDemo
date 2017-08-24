@@ -11,6 +11,6 @@ public class VacationHomeActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_activity);
+        setContentView(R.layout.hsq_home_activity);
     }
 }

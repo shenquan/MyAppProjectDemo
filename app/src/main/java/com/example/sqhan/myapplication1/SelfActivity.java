@@ -13,7 +13,7 @@ public class SelfActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.self_main);
+        setContentView(R.layout.app_self_main);
 
     }
 }

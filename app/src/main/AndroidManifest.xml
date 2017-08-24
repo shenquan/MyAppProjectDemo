@@ -33,6 +33,13 @@
             android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.my.flowlayout.JGActivity"
+            android:allowTaskReparenting="true"
+            android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
 
     </application>
 

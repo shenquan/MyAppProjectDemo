@@ -5,6 +5,8 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,8 +17,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class JGActivity extends Activity {
     TagLayout mFlowLayout;
+    private Context mContext;
     String[] tags = new String[]{"别人家孩子作业做到转钟", "别人家孩子周末都在家学习", "成天就知道玩游戏", "别人上清华了", "比你优秀的人还比你勤奋", "我怎么教出你这么个不争气的败家子", "因为你是小明？"};
 
     private LinearLayout linear;
@@ -26,7 +29,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.hsq_activity_main);
+        mContext = this;
 
         mFlowLayout = (TagLayout) findViewById(R.id.tags);
         for (int i = 0; i < tags.length; i++) {
@@ -48,9 +52,24 @@ public class MainActivity extends Activity {
         cesi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //动画测试
+                /*Intent intent = new Intent(JGActivity.this,VacationHomeActivity.class);
+                JGActivity.this.startActivity(intent);*/
 
-                Intent intent = new Intent(MainActivity.this,VacationHomeActivity.class);
-                MainActivity.this.startActivity(intent);
+                //方法一成功
+                Intent intent = new Intent();
+                ComponentName componentName = new ComponentName(mContext, "com.example.module1.activity.Activity1");
+                intent.setComponent(componentName);
+                startActivity(intent);
+                /*//不行，只能用于启动第三方app,http://blog.csdn.net/huangyabin001/article/details/36626341
+//                ComponentName componentName = new ComponentName("com.example.sqhan.myapplication1", "com.example.sqhan.myapplication1.SelfActivity");
+                //可以
+                ComponentName componentName = new ComponentName(mContext, "com.example.module1.activity.Activity1");
+                Intent intent = new Intent();
+                intent.setComponent(componentName);
+                startActivity(intent);*/
+
+
             }
         });
     }
