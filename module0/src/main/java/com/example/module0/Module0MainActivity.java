@@ -41,10 +41,13 @@ public class Module0MainActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (R.id.navigation_home == id) {
                 mTextMessage.setText(R.string.module0_title_home);
+                return true;//需要返回true
             } else if (R.id.navigation_dashboard == id) {
                 mTextMessage.setText(R.string.module0_title_dashboard);
+                return true;
             } else if (R.id.navigation_notifications == id) {
                 mTextMessage.setText(R.string.module0_title_notifications);
+                return true;
             }
 
             return false;
