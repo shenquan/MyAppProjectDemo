@@ -5,6 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
+        //这里面是用classpath，外面是用compile
         classpath 'com.android.tools.build:gradle:2.3.3'
 
         // NOTE: Do not place your application dependencies here; they belong

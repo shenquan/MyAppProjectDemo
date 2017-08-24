@@ -1,1 +1,1 @@
-include ':app', ':module1', ':libraries:mylibrary1', ':libraries:mylibrary2', ':hsqanimation'
+include ':hsqmain', ':modelsplit:mylibrary1', ':modelsplit:mylibrary2', ':jgdemo', ':hsqbusiness', ':module0', ':module1'

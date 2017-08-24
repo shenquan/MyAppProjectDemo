@@ -1,0 +1,165 @@
+apply plugin: 'com.android.application'
+
+def outputPathName = "${rootDir}/apk"
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.sqhan.myapplication1"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        debug {
+            storeFile file("../mykeystore1.jks")
+            storePassword "hsq1991"
+            keyAlias "keyhsq111111"
+            keyPassword "hsq1991"
+        }
+
+        release {
+            storeFile file("../mykeystore1.jks")
+            storePassword "hsq1991"
+            keyAlias "keyhsq111111"
+            keyPassword "hsq1991"
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+            buildConfigField "String", "API_URL", "\"debugString\""
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField "String", "API_URL", "\"releaseString\""
+        }
+        staging123.initWith(buildTypes.debug)
+        staging {
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
+            buildConfigField "String", "XX", "\"xxx\""
+            signingConfig signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        blue {
+            applicationId "jfgewjgk.feg.mmm"
+        }
+        red {
+            applicationId "jfgewjgk.feg.f"
+        }
+
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                File outputDirectory
+                def time
+//                if ("true".equals(IS_JENKINS)) {
+//                    outputPathName = BUILD_PATH_JENKINS
+//                    time = BUILD_TIME
+//                } else {
+                time = releaseTime()
+//                }
+                outputDirectory = new File(outputPathName);
+                def fileName
+                if (variant.buildType.name == "release") {
+                    fileName = "app_v${defaultConfig.versionName}_${time}_${variant.buildType.name}.apk"
+                    output.outputFile = new File(outputDirectory, fileName)
+                } else if (variant.buildType.name == "debug") {
+                    fileName = "app_v${defaultConfig.versionName}_${time}_${variant.buildType.name}.apk"
+                    output.outputFile = new File(outputDirectory, fileName)
+                } else {
+                    fileName = "app_v${defaultConfig.versionName}_${time}_${variant.buildType.name}.apk"
+                    output.outputFile = new File(outputDirectory, fileName)
+                }
+            }
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:design:25.3.0'
+    testCompile 'junit:junit:4.12'
+    //引用其它工程的目的是统一注册注册到main模块里面的AndroidManifest中
+    //其它的模块分别依赖Business模块
+    compile project(':modelsplit:mylibrary1')
+    compile project(':modelsplit:mylibrary2')
+    compile project(':jgdemo')
+    compile project(':module0')
+    compile project(':module1')
+
+}
+
+
+task cleanApk() {
+    File file1 = new File(outputPathName);
+    if (file1.exists()) {
+        file1.deleteDir();
+    }
+}
+clean.dependsOn cleanApk
+
+def name = "andy"
+def name1 = "Hello,$name"
+def method = 'toString'
+new Date()."$method"()
+
+class MyGroovyClass{
+    String greeting
+
+    String getGreeting(){
+        return greeting
+    }
+}
+
+def is = new MyGroovyClass()
+is.setGreeting("ff")
+is.getGreeting()
+is.greeting
+
+def sq(def n){
+    n*n
+}
+
+def m = sq 4
+
+//原来出错因为写成了num*mum
+def square = {num->
+    num * num
+}
+
+square 1
+
+
+
+
+
+
+
+
+
+
+
+
+

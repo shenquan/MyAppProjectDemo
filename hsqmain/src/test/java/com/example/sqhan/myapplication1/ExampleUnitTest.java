@@ -1,4 +1,4 @@
-package com.example.module1;
+package com.example.sqhan.myapplication1;
 
 import org.junit.Test;
 

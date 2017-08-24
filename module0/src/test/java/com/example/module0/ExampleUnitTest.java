@@ -1,4 +1,4 @@
-package com.example.module1;
+package com.example.module0;
 
 import org.junit.Test;
 
