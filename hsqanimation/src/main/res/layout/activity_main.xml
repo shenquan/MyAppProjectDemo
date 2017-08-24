@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/root"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <com.my.flowlayout.TagLayout
+        android:id="@+id/tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F00">
+    </com.my.flowlayout.TagLayout>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:onClick="rotateyAnimRun"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/id_ball"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:gravity="center_vertical"
+            android:background="@drawable/my3"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/cesi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="测试"/>
+</LinearLayout>

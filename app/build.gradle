@@ -137,12 +137,12 @@ def sq(def n){
 }
 
 def m = sq 4
-
-def squ = {num->
-    num*mum
+/*
+def square = { num ->
+    num * mum
 }
 
-squ 0
+square 1*/
 
 
 
