@@ -5,8 +5,6 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-import static android.R.attr.action;
-
 /**
  * @author Zhenhua on 2017/8/22.
  * @email zhshan@ctrip.com ^.^
@@ -31,14 +29,16 @@ public class AnimationScrollView extends ScrollView {
     }
 
     public interface OnScrollChangeListener {
-        void onScrollChanged(int action, int dy);
+        void onScrollChanged(int dy);
     }
 
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        listener.onScrollChanged(action, (int) (getScrollY() * 0.5f));
+        if (listener != null) {
+            listener.onScrollChanged((int) (getScrollY() * 0.5f));
+        }
 
     }
 }

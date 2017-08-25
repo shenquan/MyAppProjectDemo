@@ -52,7 +52,7 @@ android {
         }
     }
 
-    productFlavors {
+    /*productFlavors {
         blue {
             applicationId "jfgewjgk.feg.mmm"
         }
@@ -60,7 +60,7 @@ android {
             applicationId "jfgewjgk.feg.f"
         }
 
-    }
+    }*/
 
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -108,7 +108,7 @@ dependencies {
     compile project(':jgdemo')
     compile project(':module0')
     compile project(':module1')
-
+    compile project(':hsqmvpmodule')
 }
 
 

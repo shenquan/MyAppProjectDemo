@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,8 +64,11 @@ public class VacationHomeFragment extends Fragment {
         AnimationScrollView scrollView = (AnimationScrollView) mRootView.findViewById(R.id.scrollview);
         final ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) tagView.getLayoutParams();
         scrollView.setOnScrollListener(new AnimationScrollView.OnScrollChangeListener() {
+            //synchronized
             @Override
-            public synchronized void onScrollChanged(int action, final int dy) {
+            public synchronized void onScrollChanged(final int dy) {
+
+                Log.e("hsq", "dy = " + dy);
 
                 int newTopMargin = maxHeight - dy;
                 int newWidth = maxWidth - dy;
@@ -85,10 +89,10 @@ public class VacationHomeFragment extends Fragment {
 //                    search_layout.getBackground().setAlpha(alpha);
                 }
                 if ((newTopMargin - minHeight) > 0) {
-                    alpha = (newTopMargin - minHeight) * 225 / maxHeight;
+                    alpha = (newTopMargin - minHeight) * 255 / maxHeight;
                     search_layout.getBackground().setAlpha(alpha);
                 } else {
-                    search_layout.getBackground().setAlpha(225);
+                    search_layout.getBackground().setAlpha(255);
                 }
                 params.topMargin = newTopMargin;
                 params.width = newWidth;

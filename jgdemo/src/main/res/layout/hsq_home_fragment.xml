@@ -111,9 +111,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="3000dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="test" />
+                android:text="test文本"
+                android:textSize="30sp" />
         </LinearLayout>
     </com.my.flowlayout.AnimationScrollView>
 
