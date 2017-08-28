@@ -151,6 +151,11 @@ def square = {num->
 
 square 1
 
+task hsq {
+    println "引用gradle.properties中的变量"+HSQ
+    println "引用gradle.properties中的变量${HSQ}"
+}
+
 
 
 
