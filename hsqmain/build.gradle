@@ -118,17 +118,20 @@ task cleanApk() {
         file1.deleteDir();
     }
 }
+//执行clean任务必先执行cleanApk任务
 clean.dependsOn cleanApk
 
+/////////////////////////////////////////////////
+///代码测试
 def name = "andy"
 def name1 = "Hello,$name"
 def method = 'toString'
 new Date()."$method"()
 
-class MyGroovyClass{
+class MyGroovyClass {
     String greeting
 
-    String getGreeting(){
+    String getGreeting() {
         return greeting
     }
 }
@@ -138,18 +141,18 @@ is.setGreeting("ff")
 is.getGreeting()
 is.greeting
 
-def sq(def n){
-    n*n
+def sq(def n) {
+    n * n
 }
 
 def m = sq 4
 
 //原来出错因为写成了num*mum
-def square = {num->
+def square = { num ->
     num * num
 }
 
-square 1
+def result1 = square 6
 
 task hsq {
     println "引用gradle.properties中的变量"+HSQ
@@ -157,6 +160,37 @@ task hsq {
 }
 
 
+task h1 << {
+    println 'Execution'
+}
+
+h1 {
+    println "Configuration+${result1}"
+}
+
+task h2{
+    println "Configuration"
+
+    doLast {
+        println "do last"
+    }
+
+    doFirst{
+        println "do first"
+    }
+
+}
+
+
+task task2<<{
+    println "task2"
+}
+
+task task1<<{
+    println "task1"
+}
+
+task2.mustRunAfter task1
 
 
 
