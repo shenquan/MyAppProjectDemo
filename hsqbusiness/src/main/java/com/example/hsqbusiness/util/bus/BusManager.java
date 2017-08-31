@@ -1,11 +1,9 @@
-package com.example.hsqbusiness.util.bus.busmanager;
+package com.example.hsqbusiness.util.bus;
 
 import android.text.TextUtils;
 
-import com.example.hsqbusiness.util.android.bundle.config.BundleConfigFactory;
-import com.example.hsqbusiness.util.android.bundle.config.BundleConfigModel;
-import com.example.hsqbusiness.util.bus.Bus;
-import com.example.hsqbusiness.util.bus.BusObject;
+import com.example.hsqbusiness.util.bus.config.BundleConfigFactory;
+import com.example.hsqbusiness.util.bus.config.BundleConfigModel;
 import com.example.hsqbusiness.util.util.LogUtil;
 
 import java.lang.reflect.Constructor;

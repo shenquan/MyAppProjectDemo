@@ -8,7 +8,7 @@ import com.example.hsqbusiness.util.MyBaseApplication;
 import com.example.hsqbusiness.util.android.activity.TestActivity;
 
 /**
- * 非bus核心，只是工具类而已
+ * 非bus核心，只是基础工具类而已
  */
 public class CommonBaseExecutor {
     private static CommonBaseExecutor instance;

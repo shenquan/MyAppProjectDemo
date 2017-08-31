@@ -7,10 +7,6 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.hsqbusiness.util.bus.Bus;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
 /**
  * Created by sqhan on 2017/8/30.
  */

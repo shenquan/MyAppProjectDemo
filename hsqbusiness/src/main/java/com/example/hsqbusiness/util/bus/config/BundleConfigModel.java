@@ -1,4 +1,4 @@
-package com.example.hsqbusiness.util.android.bundle.config;
+package com.example.hsqbusiness.util.bus.config;
 
 
 import java.util.ArrayList;

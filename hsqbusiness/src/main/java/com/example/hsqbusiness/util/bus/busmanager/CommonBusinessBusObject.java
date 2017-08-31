@@ -5,7 +5,7 @@ import android.content.Context;
 import com.example.hsqbusiness.util.bus.BusObject;
 
 /**
- * 非bus核心，只是工具类而已
+ * 非bus核心，只是基础工具类而已
  */
 public class CommonBusinessBusObject extends BusObject {
     /**

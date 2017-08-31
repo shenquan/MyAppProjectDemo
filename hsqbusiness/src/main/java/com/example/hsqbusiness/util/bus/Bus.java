@@ -4,9 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.example.hsqbusiness.util.android.bundle.config.BundleConfigFactory;
-import com.example.hsqbusiness.util.android.bundle.config.BundleConfigModel;
-import com.example.hsqbusiness.util.bus.busmanager.BusManager;
+import com.example.hsqbusiness.util.bus.config.BundleConfigFactory;
+import com.example.hsqbusiness.util.bus.config.BundleConfigModel;
 import com.example.hsqbusiness.util.util.LogUtil;
 
 import java.util.HashMap;
