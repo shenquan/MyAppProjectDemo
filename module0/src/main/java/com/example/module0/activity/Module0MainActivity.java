@@ -1,4 +1,4 @@
-package com.example.module0;
+package com.example.module0.activity;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -6,15 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.hsqbusiness.util.AndroidUtil;
+import com.example.hsqbusiness.util.MyBaseApplication;
+import com.example.hsqbusiness.util.android.base.BaseActivity;
+import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
+import com.example.module0.R;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 
-public class Module0MainActivity extends AppCompatActivity {
+public class Module0MainActivity extends BaseActivity {
     private Context mContext;
     private TextView mTextMessage;
 
@@ -58,14 +65,17 @@ public class Module0MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         setContentView(R.layout.module0_main_activity_layout);
         mContext = this;
-        try {
+        MyBaseApplication.getInstance().isHomeCreated = true;
+
+        /*try {
             //间隔调试使用
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         //每个模块若使用business工具类，需要依赖business
         AndroidUtil.showToast(mContext, "加载business模块成功");
 //        long xx = Calendar.getInstance().getTimeInMillis();
@@ -76,6 +86,7 @@ public class Module0MainActivity extends AppCompatActivity {
 //        String gewg = BuildConfig.API_URL;
 
         mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage.setText("Module0MainActivity：点击我跳转");
         mTextMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,10 +95,41 @@ public class Module0MainActivity extends AppCompatActivity {
                 intent.setComponent(componentName);
                 startActivity(intent);
 
+                /*Intent intent1 = new Intent(mContext, SplashActivity.class);
+                startActivity(intent1);*/
+
             }
         });
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMoonEvent1111(MyMessage messageEvent) {
+//        tv_message.setText(messageEvent.getMessage());
+
+        switch (messageEvent.type) {
+            case 1:
+                String str1 = "Eventbus1:" + messageEvent.text;
+                AndroidUtil.showToast(mContext, str1);
+                mTextMessage.setText(str1);
+
+                break;
+            case 2:
+                String str2 = "Eventbus2:" + messageEvent.text;
+                AndroidUtil.showToast(mContext, str2);
+                mTextMessage.setText(str2);
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 /**
  * @author Zhenhua on 2017/7/12.
- * @email zhshan@ctrip.com ^.^
  */
 public class VacationHomeFragment extends Fragment {
 

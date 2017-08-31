@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,7 +15,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class JGActivity extends Activity {
+import com.example.hsqbusiness.util.android.base.BaseActivity;
+import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
+
+import org.greenrobot.eventbus.EventBus;
+
+public class JGActivity extends BaseActivity {
     TagLayout mFlowLayout;
     private Context mContext;
     String[] tags = new String[]{"别人家孩子作业做到转钟", "别人家孩子周末都在家学习", "成天就知道玩游戏", "别人上清华了", "比你优秀的人还比你勤奋", "我怎么教出你这么个不争气的败家子", "因为你是小明？"};
@@ -30,6 +34,20 @@ public class JGActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hsq_activity_main);
         mContext = this;
+        {//EventBus测试
+            EventBus.getDefault().post(new MyMessage(1, "欢迎1"));
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    EventBus.getDefault().post(new MyMessage(2, "欢迎2"));
+                }
+            }).start();
+        }
 
         mFlowLayout = (TagLayout) findViewById(R.id.tags);
         for (int i = 0; i < tags.length; i++) {
@@ -89,7 +107,7 @@ public class JGActivity extends Activity {
         test3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                JGActivity.this.goHome(123);
             }
         });
 

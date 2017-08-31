@@ -11,8 +11,9 @@ import android.support.multidex.MultiDex;
 public class MyBaseApplication extends Application {
     private long appStartTime;
     private static MyBaseApplication mAppInstance;
+    public boolean isHomeCreated = false;// 首页启动（用于跳转推送进入）
 
-    public static MyBaseApplication getAppInstance() {
+    public static MyBaseApplication getInstance() {
         return mAppInstance;
     }
 

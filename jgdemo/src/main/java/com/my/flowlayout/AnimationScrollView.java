@@ -7,7 +7,6 @@ import android.widget.ScrollView;
 
 /**
  * @author Zhenhua on 2017/8/22.
- * @email zhshan@ctrip.com ^.^
  */
 public class AnimationScrollView extends ScrollView {
     private OnScrollChangeListener listener;
