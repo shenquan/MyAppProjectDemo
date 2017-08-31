@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.hsqbusiness.util.AndroidUtil;
 import com.example.hsqbusiness.util.MyBaseApplication;
 import com.example.hsqbusiness.util.android.base.BaseActivity;
+import com.example.hsqbusiness.util.bus.Bus;
 import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
 import com.example.module0.R;
 
@@ -85,7 +86,7 @@ public class Module0MainActivity extends BaseActivity {
 
 //        String gewg = BuildConfig.API_URL;
 
-        mTextMessage = (TextView) findViewById(R.id.message);
+        mTextMessage = (TextView) findViewById(R.id.message1);
         mTextMessage.setText("Module0MainActivity：点击我跳转");
         mTextMessage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,18 +104,25 @@ public class Module0MainActivity extends BaseActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        TextView tv2 = (TextView) findViewById(R.id.tv2);
+        tv2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bus.callData(mContext, "module1/goMain");
+            }
+        });
+
+
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMoonEvent1111(MyMessage messageEvent) {
+    public void onMoonEvent1111(MyMessage messageEvent) {//方法名随便写都行，自己按实际意义命名即可
 //        tv_message.setText(messageEvent.getMessage());
-
         switch (messageEvent.type) {
             case 1:
                 String str1 = "Eventbus1:" + messageEvent.text;
                 AndroidUtil.showToast(mContext, str1);
                 mTextMessage.setText(str1);
-
                 break;
             case 2:
                 String str2 = "Eventbus2:" + messageEvent.text;

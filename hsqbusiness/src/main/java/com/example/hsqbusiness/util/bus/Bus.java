@@ -66,7 +66,7 @@ public class Bus {
      * 数据总线，跨业务模块同步调用
      *
      * @param context 调用上下文。根据调用场景自行决定，常见可选值null/Application/Activity等
-     * @param bizName 业务接口名，大小写不敏感
+     * @param bizName 业务接口名，大小写不敏感。--by hsq：比如"module1/goMain"
      * @param param   附加参数
      * @return 直接返回对方接口的返回值
      */
@@ -75,6 +75,8 @@ public class Bus {
         if (obj != null) {
             return obj.doDataJob(context, bizName, param);
         }
+
+        LogUtil.f("Bus中未找到" + bizName);
 
         return null;
     }

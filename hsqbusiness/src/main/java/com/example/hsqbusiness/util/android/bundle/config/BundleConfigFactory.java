@@ -14,12 +14,13 @@ public class BundleConfigFactory {
         bundleConfigModels = new ArrayList<BundleConfigModel>();
 
         /*bundleConfigModels.add(new BundleConfigModel(
-                "local",//"if (bizName.equalsIgnoreCase("local/goMain")) {}"中的区分字符串
+                "local",//"if (bizName.equalsIgnoreCase("local/goMain")) {}"中的区分字符串，bizName的host部分。例如：hotel/list则返回host部分"hotel"
                 "ctr_hsq_ip.link.ctlocal",//模块包名，看该模块中的manifest文件中的名字
                 "ctr_hsq_ip.link.ctlocal.bus.LocalBus",//该模块bus的文件名
                 BundleConfigModel.BundleLoadType.AutoLoad,//加载方式
                 true
         ));*/
+
         bundleConfigModels.add(new BundleConfigModel(
                 "module1",
                 "com.example.module1",

@@ -20,7 +20,7 @@ public class Module0SelfActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module0_self_activity_layout);
 
-        EventBus.getDefault().post(new MyMessage(1, "欢迎1"));
+        EventBus.getDefault().post(new MyMessage(1, "UI线程中POST：欢迎1"));
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -29,7 +29,7 @@ public class Module0SelfActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                EventBus.getDefault().post(new MyMessage(2, "欢迎2"));
+                EventBus.getDefault().post(new MyMessage(2, "子线程中POST：欢迎2"));
             }
         }).start();
 

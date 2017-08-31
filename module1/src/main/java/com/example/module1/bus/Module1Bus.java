@@ -28,10 +28,10 @@ public class Module1Bus extends BusObject {
         if (TextUtils.isEmpty(bizName)) {
             return null;
         }
-        if (bizName.equalsIgnoreCase("module2/goMain")) {
+        if (bizName.equalsIgnoreCase("module1/goMain")) {
             Intent intent = new Intent(context, Module1Activity1.class);
             context.startActivity(intent);
-        } else if (bizName.equalsIgnoreCase("module2/logined_do_something")) {
+        } else if (bizName.equalsIgnoreCase("module1/logined_do_something")) {
 
         }
         return null;
