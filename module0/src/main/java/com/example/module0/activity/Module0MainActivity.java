@@ -20,6 +20,7 @@ import com.example.module0.R;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.json.JSONObject;
 
 
 public class Module0MainActivity extends BaseActivity {
@@ -108,6 +109,7 @@ public class Module0MainActivity extends BaseActivity {
         tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //用json传第三个参数：new JSONObject().toString()
                 Bus.callData(mContext, "module1/goMain");
             }
         });
