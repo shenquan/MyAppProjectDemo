@@ -22,6 +22,7 @@ android {
 }
 
 dependencies {
+    //几个模块同时使用的第三方库放在Business中或者优先在根gradle中，单个模块使用的放在其模块中进行依赖
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
