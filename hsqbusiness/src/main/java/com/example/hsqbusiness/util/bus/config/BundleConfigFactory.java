@@ -3,9 +3,6 @@ package com.example.hsqbusiness.util.bus.config;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by yb.wang on 15/11/18.
- */
 public class BundleConfigFactory {
 
     private static final List<BundleConfigModel> bundleConfigModels;

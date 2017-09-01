@@ -3,9 +3,6 @@ package com.example.hsqbusiness.util.bus.config;
 
 import java.util.ArrayList;
 
-/**
- * Created by yb.wang on 15/11/17.
- */
 public class BundleConfigModel {
     public String moduleName;
     public String packageName;
