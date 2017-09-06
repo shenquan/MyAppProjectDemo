@@ -116,7 +116,8 @@ public class Module0MainActivity extends BaseActivity {
         tv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bus.callData(mContext, "KotlinModule/goMain");
+//                Bus.callData(mContext, "KotlinModule/goMain");
+                AndroidUtil.showToast(mContext, "点击了，但无效果");
             }
         });
 
