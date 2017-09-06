@@ -133,6 +133,12 @@ public class Module0MainActivity extends BaseActivity {
                 xx.setComposition(lottieComposition);
             }
         });
+        xx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidUtil.showToast(mContext,"点击了图片");
+            }
+        });
         //方式三，网络请求动画json文件。服务器端发送的数据为：new JSONObject().toString()
         /*try {
             JSONObject json = new JSONObject(response.body().string());
