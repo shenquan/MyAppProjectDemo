@@ -25,6 +25,13 @@ public class BundleConfigFactory {
                 BundleConfigModel.BundleLoadType.AutoLoad,
                 true
         ));
+        bundleConfigModels.add(new BundleConfigModel(
+                "kotlinmodule",
+                "com.example.kotlinmodule",
+                "com.example.kotlinmodule.bus.KotlinMoudleBus",
+                BundleConfigModel.BundleLoadType.AutoLoad,
+                true
+        ));
 
     }
 

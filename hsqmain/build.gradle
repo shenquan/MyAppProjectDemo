@@ -98,8 +98,8 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support:design:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
     //引用其它工程的目的是统一注册注册到main模块里面的AndroidManifest中
     //其它的模块分别依赖Business模块
@@ -109,6 +109,7 @@ dependencies {
     compile project(':module0')
     compile project(':module1')
     compile project(':hsqmvpmodule')
+    compile project(':kotlinmodule')
 }
 
 

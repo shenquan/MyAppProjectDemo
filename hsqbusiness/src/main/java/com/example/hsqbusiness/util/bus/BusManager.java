@@ -14,7 +14,7 @@ import java.lang.reflect.Constructor;
 public class BusManager {
 
     private static final String COMMON_HOST_NAME = "common";
-    private static final String COMMON_BUS_OBJECT = "com.example.hsqbusiness.util.bus.busmanager.CommonBusinessBusObject";
+    private static final String COMMON_BUS_OBJECT = "com.example.hsqbusiness.util.busmanager.CommonBusinessBusObject";
 
 
     public static BusObject registerBusObjectWithHost(String hostName) {

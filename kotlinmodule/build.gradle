@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
@@ -23,21 +22,11 @@ android {
 }
 
 dependencies {
-    //几个模块同时使用的第三方库放在Business中或者优先在根gradle中，单个模块使用的放在其模块中进行依赖
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-
-    //对于外部包的依赖放在business中
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
-
-}
-repositories {
-    mavenCentral()
+    compile project(':hsqbusiness')
 }

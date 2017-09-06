@@ -1,1 +1,1 @@
-include ':hsqmain', ':modelsplit:mylibrary1', ':modelsplit:mylibrary2', ':jgdemo', ':hsqbusiness', ':module0', ':module1', ':hsqmvpmodule'
+include ':hsqmain', ':modelsplit:mylibrary1', ':modelsplit:mylibrary2', ':jgdemo', ':hsqbusiness', ':module0', ':module1', ':hsqmvpmodule', ':kotlinmodule'
