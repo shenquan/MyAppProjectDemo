@@ -43,7 +43,7 @@
             <!--方式1-->
             <!--<com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_view"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
                 app:lottie_autoPlay="true"
                 app:lottie_fileName="loading.json"
@@ -52,9 +52,11 @@
             <!--方式2-->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_view"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
                 app:lottie_autoPlay="true"
+                android:background="#3536"
+                android:layout_gravity="center"
                 app:lottie_loop="true" />
 
         </LinearLayout>
