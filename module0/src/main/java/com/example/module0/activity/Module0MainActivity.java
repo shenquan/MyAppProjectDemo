@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.airbnb.lottie.model.LottieComposition;
 import com.example.hsqbusiness.util.AndroidUtil;
 import com.example.hsqbusiness.util.MyBaseApplication;
 import com.example.hsqbusiness.util.android.base.BaseActivity;
@@ -121,6 +123,27 @@ public class Module0MainActivity extends BaseActivity {
 //                AndroidUtil.showToast(mContext, "点击了，但无效果");
             }
         });
+        //引用Lottie显示动画的三种方法
+        //方式一，放在本地,xml中的app:lottie_fileName不能为空字符串，否则报错
+        //方式二，放在本地
+        final LottieAnimationView xx = (LottieAnimationView) findViewById(R.id.animation_view);
+        LottieComposition.fromAssetFileName(mContext, "loading.json", new LottieComposition.OnCompositionLoadedListener() {
+            @Override
+            public void onCompositionLoaded(LottieComposition lottieComposition) {
+                xx.setComposition(lottieComposition);
+            }
+        });
+        //方式三，网络请求动画json文件。服务器端发送的数据为：new JSONObject().toString()
+        /*try {
+            JSONObject json = new JSONObject(response.body().string());
+            LottieComposition.fromJson(getResources(), json, new LottieComposition.OnCompositionLoadedListener() {
+                @Override
+                public void onCompositionLoaded(LottieComposition composition) {
+                    setComposition(composition);
+                }
+            });
+        } catch (JSONException e) {
+        }*/
 
 
     }
