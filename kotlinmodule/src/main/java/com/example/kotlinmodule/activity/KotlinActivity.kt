@@ -12,6 +12,8 @@ import com.example.kotlinmodule.R
 
 class KotlinActivity : BaseActivity() {
 
+    //todo  该模块的manifest中不知怎么引用这个，所以启动该模块的app失败
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.kotlin_main_layout)

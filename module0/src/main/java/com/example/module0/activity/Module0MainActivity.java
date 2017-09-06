@@ -113,11 +113,12 @@ public class Module0MainActivity extends BaseActivity {
             }
         });
         TextView tv3 = (TextView) findViewById(R.id.tv3);
+        tv3.setVisibility(View.GONE);
         tv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                Bus.callData(mContext, "KotlinModule/goMain");
-                AndroidUtil.showToast(mContext, "点击了，但无效果");
+//                AndroidUtil.showToast(mContext, "点击了，但无效果");
             }
         });
 
