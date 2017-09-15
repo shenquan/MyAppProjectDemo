@@ -40,6 +40,14 @@
                 android:text="点击：使用总线跳转至KotlinModule"
                 android:textSize="25sp" />
 
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="滑动冲突Demo"
+                android:textSize="25sp" />
+
             <!--方式1-->
             <!--<com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_view"
@@ -54,9 +62,10 @@
                 android:id="@+id/animation_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:lottie_autoPlay="true"
-                android:background="#3536"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#3536"
+                app:lottie_autoPlay="true"
                 app:lottie_loop="true" />
 
         </LinearLayout>

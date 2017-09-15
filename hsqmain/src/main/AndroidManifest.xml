@@ -91,6 +91,11 @@
             android:allowTaskReparenting="true"
             android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.module0.activity.Module0SlideActivity"
+            android:allowTaskReparenting="true"
+            android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
 
     </application>
 
