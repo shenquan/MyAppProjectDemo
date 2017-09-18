@@ -21,32 +21,33 @@
                 android:id="@+id/message1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="点击：跳转页面1"
-                android:textSize="25sp" />
+                android:layout_marginTop="15dp"
+                android:text="1：点击我跳转测试页面"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="点击：使用总线跳转至module1中的Activity"
-                android:textSize="25sp" />
+                android:text="2：点击使用总线跳转至module1中的Activity"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="点击：使用总线跳转至KotlinModule"
-                android:textSize="25sp" />
+                android:text="3：点击使用总线跳转至KotlinModule"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="滑动冲突Demo"
-                android:textSize="25sp" />
+                android:text="4：滑动冲突悬停Demo"
+                android:textSize="15sp" />
 
             <!--方式1-->
             <!--<com.airbnb.lottie.LottieAnimationView

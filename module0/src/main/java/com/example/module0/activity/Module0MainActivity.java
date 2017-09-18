@@ -89,7 +89,6 @@ public class Module0MainActivity extends BaseActivity {
 //        String gewg = BuildConfig.API_URL;
 
         mTextMessage = (TextView) findViewById(R.id.message1);
-        mTextMessage.setText("Module0MainActivity：点击我跳转");
         mTextMessage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
