@@ -59,6 +59,14 @@
                 app:lottie_loop="true" />-->
 
             <!--方式2-->
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="下面为Lottie加载gif图片："
+                android:textSize="15sp" />
+
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_view"
                 android:layout_width="match_parent"
