@@ -103,7 +103,7 @@ public class JGActivity extends BaseActivity {
 
             }
         });
-
+        test3.setText("使用bus返回首页");
         test3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
