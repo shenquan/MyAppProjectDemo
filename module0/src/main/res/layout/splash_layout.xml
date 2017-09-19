@@ -10,6 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="SPLASH页面/n点击进入"
+        android:text="SPLASH页面\n点击进入首页"
         android:textSize="20sp" />
 </LinearLayout>

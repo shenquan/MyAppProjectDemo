@@ -26,9 +26,9 @@ public class SplashActivity extends BaseActivity {
 
         TextView tv = (TextView) findViewById(R.id.tv);
         if (isDebug()) {
-            tv.setText("Debug版SPLASH页面/n点击进入首页");
+            tv.setText("Debug版SPLASH页面\n点击进入首页");
         } else {
-            tv.setText("Release版SPLASH页面/n点击进入首页");
+            tv.setText("Release版SPLASH页面\n点击进入首页");
         }
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
