@@ -37,20 +37,26 @@ android {
         debug {
             signingConfig signingConfigs.debug
             buildConfigField "String", "API_URL", "\"debugString\""
+            //为已经存在的applicationId添加后缀
+            applicationIdSuffix ".debug"
+            // 为版本名添加后缀
+            versionNameSuffix "-debug"
+            resValue "string", "app_name_in_gradle", "DemoDeb版"
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             buildConfigField "String", "API_URL", "\"releaseString\""
+            resValue "string", "app_name_in_gradle", "DemoRel版"
         }
-        staging123.initWith(buildTypes.debug)
+        /*staging123.initWith(buildTypes.debug)
         staging {
             applicationIdSuffix ".staging"
             versionNameSuffix "-staging"
             buildConfigField "String", "XX", "\"xxx\""
             signingConfig signingConfigs.release
-        }
+        }*/
     }
 
     /*productFlavors {
