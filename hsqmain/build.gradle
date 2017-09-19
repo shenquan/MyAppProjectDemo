@@ -48,6 +48,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
             buildConfigField "String", "API_URL", "\"releaseString\""
+            // 为版本名添加后缀
+            versionNameSuffix "-release"
             resValue "string", "app_name_in_gradle", "DemoRel版"
         }
         /*staging123.initWith(buildTypes.debug)
@@ -68,6 +70,26 @@ android {
         }
 
     }*/
+    /*sourceSets {
+        debug {//增加debug状态处理
+            manifest.srcFile 'debug/AndroidManifest.xml'
+            java.srcDirs = ['debug/java']
+        }
+        test{
+            java.srcDirs = ['test/java']
+        }
+    }*/
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/java' // 指定源码目录
+                srcDir 'build/generated/freeline/com/antfortune/freeline/FreelineConfig.java' // 指定build下freeline的源码目录
+            }
+            resources {
+                srcDir 'src/resources' //资源目录
+            }
+        }
+    }
 
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
