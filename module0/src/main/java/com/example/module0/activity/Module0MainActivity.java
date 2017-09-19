@@ -80,7 +80,7 @@ public class Module0MainActivity extends BaseActivity {
             e.printStackTrace();
         }*/
         //每个模块若使用business工具类，需要依赖business
-        AndroidUtil.showToast(mContext, "加载business模块成功");
+//        AndroidUtil.showToast(mContext, "加载business模块成功");
 //        long xx = Calendar.getInstance().getTimeInMillis();
 ////        long xx1 = System.currentTimeMillis();
 //        long xx1 = new Date().getTime();

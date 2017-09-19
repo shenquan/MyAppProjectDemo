@@ -1,6 +1,7 @@
 package com.example.module0.activity;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -24,6 +25,11 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.splash_layout);
 
         TextView tv = (TextView) findViewById(R.id.tv);
+        if (isDebug()) {
+            tv.setText("Debug版SPLASH页面/n点击进入首页");
+        } else {
+            tv.setText("Release版SPLASH页面/n点击进入首页");
+        }
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,5 +43,16 @@ public class SplashActivity extends BaseActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMoonEvent1111(MyMessage messageEvent) {
 
+    }
+
+    /**
+     * 判断是否为debug环境
+     *
+     * @return
+     */
+    private boolean isDebug() {
+        ApplicationInfo info = this.getApplicationInfo();
+        boolean isDubug = (info.flags & ApplicationInfo.FLAG_DEBUGGABLE) != 0 ? true : false;
+        return isDubug;
     }
 }
