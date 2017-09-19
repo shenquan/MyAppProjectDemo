@@ -1,4 +1,4 @@
-package com.example.hsqbusiness.util.bus.config;
+package com.example.hsqbusiness.bus.config;
 
 
 import java.util.ArrayList;

@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.model.LottieComposition;
+import com.example.hsqbusiness.MyBaseApplication;
+import com.example.hsqbusiness.android.base.BaseActivity;
+import com.example.hsqbusiness.bus.Bus;
+import com.example.hsqbusiness.eventbusmessage.MyMessage;
 import com.example.hsqbusiness.util.AndroidUtil;
-import com.example.hsqbusiness.util.MyBaseApplication;
-import com.example.hsqbusiness.util.android.base.BaseActivity;
-import com.example.hsqbusiness.util.bus.Bus;
-import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
 import com.example.module0.R;
 
 import org.greenrobot.eventbus.EventBus;

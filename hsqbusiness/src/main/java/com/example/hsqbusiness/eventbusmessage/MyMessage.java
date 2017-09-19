@@ -1,4 +1,4 @@
-package com.example.hsqbusiness.util.eventbusmessage;
+package com.example.hsqbusiness.eventbusmessage;
 
 /**
  * Created by sqhan on 2017/8/30.

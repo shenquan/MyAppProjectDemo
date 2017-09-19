@@ -1,6 +1,6 @@
 package com.example.sqhan;
 
-import com.example.hsqbusiness.util.MyBaseApplication;
+import com.example.hsqbusiness.MyBaseApplication;
 
 /**
  * Created by sqhan on 2017/8/24.

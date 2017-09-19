@@ -1,4 +1,4 @@
-package com.example.hsqbusiness.util.bus;
+package com.example.hsqbusiness.bus;
 
 import android.content.Context;
 

@@ -1,10 +1,10 @@
-package com.example.hsqbusiness.util.bus;
+package com.example.hsqbusiness.bus;
 
 import android.text.TextUtils;
 
-import com.example.hsqbusiness.util.bus.config.BundleConfigFactory;
-import com.example.hsqbusiness.util.bus.config.BundleConfigModel;
-import com.example.hsqbusiness.util.util.LogUtil;
+import com.example.hsqbusiness.bus.config.BundleConfigFactory;
+import com.example.hsqbusiness.bus.config.BundleConfigModel;
+import com.example.hsqbusiness.util.LogUtil;
 
 import java.lang.reflect.Constructor;
 
@@ -14,7 +14,7 @@ import java.lang.reflect.Constructor;
 public class BusManager {
 
     private static final String COMMON_HOST_NAME = "common";
-    private static final String COMMON_BUS_OBJECT = "com.example.hsqbusiness.util.busmanager.CommonBusinessBusObject";
+    private static final String COMMON_BUS_OBJECT = "com.example.hsqbusiness.busmanager.CommonBusinessBusObject";
 
 
     public static BusObject registerBusObjectWithHost(String hostName) {

@@ -1,10 +1,10 @@
-package com.example.hsqbusiness.util.android.activity;
+package com.example.hsqbusiness.android.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.example.hsqbusiness.R;
-import com.example.hsqbusiness.util.android.base.BaseActivity;
+import com.example.hsqbusiness.android.base.BaseActivity;
 
 /**
  * Created by sqhan on 2017/8/31.

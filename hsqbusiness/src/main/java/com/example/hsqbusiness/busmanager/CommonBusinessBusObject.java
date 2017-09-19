@@ -1,8 +1,8 @@
-package com.example.hsqbusiness.util.busmanager;
+package com.example.hsqbusiness.busmanager;
 
 import android.content.Context;
 
-import com.example.hsqbusiness.util.bus.BusObject;
+import com.example.hsqbusiness.bus.BusObject;
 
 /**
  * 非bus核心，只是基础工具类而已

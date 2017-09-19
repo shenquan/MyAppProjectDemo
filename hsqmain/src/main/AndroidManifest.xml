@@ -82,7 +82,7 @@
             android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.hsqbusiness.util.android.activity.TestActivity"
+            android:name="com.example.hsqbusiness.android.activity.TestActivity"
             android:allowTaskReparenting="true"
             android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />

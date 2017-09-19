@@ -1,12 +1,12 @@
-package com.example.hsqbusiness.util.bus;
+package com.example.hsqbusiness.bus;
 
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.example.hsqbusiness.util.bus.config.BundleConfigFactory;
-import com.example.hsqbusiness.util.bus.config.BundleConfigModel;
-import com.example.hsqbusiness.util.util.LogUtil;
+import com.example.hsqbusiness.bus.config.BundleConfigFactory;
+import com.example.hsqbusiness.bus.config.BundleConfigModel;
+import com.example.hsqbusiness.util.LogUtil;
 
 import java.util.HashMap;
 

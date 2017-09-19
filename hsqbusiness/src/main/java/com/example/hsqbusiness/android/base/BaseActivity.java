@@ -1,11 +1,11 @@
-package com.example.hsqbusiness.util.android.base;
+package com.example.hsqbusiness.android.base;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
-import com.example.hsqbusiness.util.bus.Bus;
+import com.example.hsqbusiness.bus.Bus;
 
 /**
  * Created by sqhan on 2017/8/30.

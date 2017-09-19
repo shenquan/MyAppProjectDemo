@@ -1,9 +1,9 @@
 package com.example.kotlinmodule.activity
 
 import android.os.Bundle
-import com.example.hsqbusiness.util.android.base.BaseActivity
-import com.example.hsqbusiness.util.util.AndroidUtil
-import com.example.hsqbusiness.util.util.LogUtil
+import com.example.hsqbusiness.android.base.BaseActivity
+import com.example.hsqbusiness.util.AndroidUtil
+import com.example.hsqbusiness.util.LogUtil
 import com.example.kotlinmodule.R
 import kotlinx.android.synthetic.main.kotlin_main_layout.*
 

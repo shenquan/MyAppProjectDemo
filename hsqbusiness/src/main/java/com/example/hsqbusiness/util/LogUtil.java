@@ -7,11 +7,11 @@ import android.util.Log;
  * Created by sqhan on 2017/6/16.
  */
 
-public class MyLogUtil {
-    private static final String TAG = AndroidUtil.TAG;
+public class LogUtil {
+    private static final String TAG = "hsq";
     private static boolean showLog = true;//此处默认显示为true，用Freeline好调试
 
-    public MyLogUtil() {
+    public LogUtil() {
     }
 
     public static void e(String msg) {
@@ -30,12 +30,25 @@ public class MyLogUtil {
         }
     }
 
+    //强制显示日志:force
+    public static void f(String msg) {
+        if (!TextUtils.isEmpty(msg)) {
+            Log.e(TAG, msg);
+        }
+    }
+
+    public static void f(String tag, String msg) {
+        if (!TextUtils.isEmpty(tag) && !TextUtils.isEmpty(msg)) {
+            Log.e(tag, msg);
+        }
+    }
+
 
     public static boolean isShowLog() {
         return showLog;
     }
 
     public static void setShowLog(boolean showLog) {
-        MyLogUtil.showLog = showLog;
+        LogUtil.showLog = showLog;
     }
 }

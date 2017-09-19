@@ -7,8 +7,8 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.hsqbusiness.util.android.base.BaseActivity;
-import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
+import com.example.hsqbusiness.android.base.BaseActivity;
+import com.example.hsqbusiness.eventbusmessage.MyMessage;
 import com.example.module0.R;
 
 import org.greenrobot.eventbus.Subscribe;

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.hsqbusiness.util.eventbusmessage.MyMessage;
+import com.example.hsqbusiness.eventbusmessage.MyMessage;
 import com.example.module0.R;
 
 import org.greenrobot.eventbus.EventBus;

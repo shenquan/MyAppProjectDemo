@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.example.hsqbusiness.util.bus.BusObject;
+import com.example.hsqbusiness.bus.BusObject;
 import com.example.module1.activity.Module1Activity1;
 
 

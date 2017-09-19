@@ -1,4 +1,4 @@
-package com.example.hsqbusiness.util.android.base;
+package com.example.hsqbusiness.android.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
