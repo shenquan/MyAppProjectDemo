@@ -1,9 +1,11 @@
-apply plugin:'com.tencent.bugly.tinker-support'
+apply plugin: 'com.tencent.bugly.tinker-support'
 
 def bakPath = file("${buildDir}/bakApk/")
 
-
-def baseApkDir = "local-1.0.0"
+//by sqhan
+// 正常情況下不改下面的，打补丁包的时候需要将此处改为CtripMain/build/bakApk/CtripMain-XXXX-XX-XX-XX
+//打包的时候要把要修复的原始版本放到bakApk目录下面作为对比。
+def baseApkDir = "hsqmain-0920-11-38-09"
 
 
 tinkerSupport {
@@ -17,24 +19,25 @@ tinkerSupport {
 
     overrideTinkerPatchConfiguration = true
 
-
-    baseApk = "${bakPath}/${baseApkDir}/app_v1.0.0_2017-07-14_release.apk"
-
+    //1，后面的apk设置为基线版本的名字
+    baseApk = "${bakPath}/${baseApkDir}/app_v1.0_2017-09-20_debug.apk"
 
     //baseApkProguardMapping = "${bakPath}/${baseApkDir}/CtripMain-release-R.txt"
 
+    //2，后面的XX-R.txt设置为基线版本R文件的名字，这里基本都是名字为CtripMain-release-R.txt
+    baseApkResourceMapping = "${bakPath}/${baseApkDir}/hsqmain-debug-R.txt"
 
-    baseApkResourceMapping = "${bakPath}/${baseApkDir}/CtripMain-release-R.txt"
-
-
-    tinkerId = "patch-1.0.0"
+    //3，打线上release包时要修改这里为X.X.X-base作为热修复的目标版本识别；
+    // 热修复的时候修改为对应的"X.X.X-patch"，或其它与其它所有基线版本不同的名字，没有固定样式。
+    tinkerId = "1.0.0-base"
+//    tinkerId = "1.0.0-patch"
 
 
     enableProxyApplication = true
 
 }
 
-
+//下面的不要修改
 tinkerPatch {
     ignoreWarning = false
     useSign = true

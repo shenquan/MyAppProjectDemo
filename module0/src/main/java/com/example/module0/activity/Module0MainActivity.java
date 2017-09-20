@@ -154,6 +154,13 @@ public class Module0MainActivity extends BaseActivity {
         tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //崩溃热修复测试
+                /*vv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });*/
                 Intent intent = new Intent(mContext, Module0SlideActivity.class);
                 startActivity(intent);
             }
@@ -161,6 +168,7 @@ public class Module0MainActivity extends BaseActivity {
 
 
     }
+    private View vv;
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMoonEvent1111(MyMessage messageEvent) {//方法名随便写都行，自己按实际意义命名即可

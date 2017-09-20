@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'com.antfortune.freeline'
 
-//apply from: 'tinker-support.gradle'
+apply from: 'tinker-support.gradle'
 def outputPathName = "${rootDir}/apk"
 
 def releaseTime() {
@@ -17,7 +17,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -72,6 +72,7 @@ android {
         }
 
     }*/
+
     /*sourceSets {
         debug {//增加debug状态处理
             manifest.srcFile 'debug/AndroidManifest.xml'
@@ -81,7 +82,8 @@ android {
             java.srcDirs = ['test/java']
         }
     }*/
-    sourceSets {
+
+    /*sourceSets {
         main {
             java {
                 srcDir 'src/java' // 指定源码目录
@@ -91,7 +93,7 @@ android {
                 srcDir 'src/resources' //资源目录
             }
         }
-    }
+    }*/
 
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -187,7 +189,7 @@ def square = { num ->
 def result1 = square 6
 
 task hsq {
-    println "引用gradle.properties中的变量"+HSQ
+    println "引用gradle.properties中的变量" + HSQ
     println "引用gradle.properties中的变量${HSQ}"
 }
 
@@ -200,25 +202,25 @@ h1 {
     println "Configuration+${result1}"
 }
 
-task h2{
+task h2 {
     println "Configuration"
 
     doLast {
         println "do last"
     }
 
-    doFirst{
+    doFirst {
         println "do first"
     }
 
 }
 
 
-task task2<<{
+task task2 << {
     println "task2"
 }
 
-task task1<<{
+task task1 << {
     println "task1"
 }
 
