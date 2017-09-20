@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
+
 apply plugin: 'com.antfortune.freeline'
 
+//apply from: 'tinker-support.gradle'
 def outputPathName = "${rootDir}/apk"
 
 def releaseTime() {

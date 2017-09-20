@@ -1,0 +1,65 @@
+apply plugin:'com.tencent.bugly.tinker-support'
+
+def bakPath = file("${buildDir}/bakApk/")
+
+
+def baseApkDir = "local-1.0.0"
+
+
+tinkerSupport {
+
+
+    enable = true
+
+
+    autoBackupApkDir = "${bakPath}"
+
+
+    overrideTinkerPatchConfiguration = true
+
+
+    baseApk = "${bakPath}/${baseApkDir}/app_v1.0.0_2017-07-14_release.apk"
+
+
+    //baseApkProguardMapping = "${bakPath}/${baseApkDir}/CtripMain-release-R.txt"
+
+
+    baseApkResourceMapping = "${bakPath}/${baseApkDir}/CtripMain-release-R.txt"
+
+
+    tinkerId = "patch-1.0.0"
+
+
+    enableProxyApplication = true
+
+}
+
+
+tinkerPatch {
+    ignoreWarning = false
+    useSign = true
+    dex {
+        dexMode = "jar"
+        pattern = ["classes*.dex"]
+        loader = []
+    }
+    lib {
+        pattern = ["lib/*/*.so"]
+    }
+
+    res {
+        pattern = ["res/*", "r/*", "assets/*", "resources.arsc", "AndroidManifest.xml"]
+        ignoreChange = []
+        largeModSize = 100
+    }
+
+    packageConfig {
+    }
+    sevenZip {
+        zipArtifact = "com.tencent.mm:SevenZip:1.1.10"
+//        path = "/usr/local/bin/7za"
+    }
+    buildConfig {
+        keepDexApply = false
+    }
+}

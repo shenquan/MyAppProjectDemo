@@ -3,11 +3,11 @@ package com.example.hsqbusiness;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
-import android.util.Log;
 
 import com.example.hsqbusiness.util.AndroidUtil;
 import com.example.hsqbusiness.util.LogUtil;
 import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
 
 /**
  * Created by sqhan on 2017/8/24.
@@ -33,6 +33,7 @@ public class MyBaseApplication extends Application {
         super.attachBaseContext(base);
         mAppInstance = this;
         MultiDex.install(this);//初始化MultiDex
+        Beta.installTinker(this);
 
     }
 
