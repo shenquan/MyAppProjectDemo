@@ -6,14 +6,33 @@
     android:orientation="vertical"
     tools:context="com.example.module1.activity.Module1Activity1">
 
-    <TextView
-        android:id="@+id/tv"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#3117"
-        android:gravity="center_horizontal"
-        android:text="module1 activity页面"
-        android:textSize="25sp" />
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="#3117"
+            android:gravity="center"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:text="10"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:background="#3985"
+            android:text="设置item总数" />
+
+    </LinearLayout>
+
 
     <!--<ListView
         android:id="@+id/list"
@@ -30,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv"
+        android:background="#9875"
         android:scrollbars="none" />
 
 </LinearLayout>

@@ -18,10 +18,14 @@ public class ListTest1Adaper extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
 
-    public ListTest1Adaper(int size, Context context) {
-        this.size = size;
+    public ListTest1Adaper(Context context, int size) {
         this.context = context;
+        this.size = size;
         inflater = LayoutInflater.from(context);
+    }
+
+    public void setData(int size) {
+        this.size = size;
     }
 
     @Override
@@ -54,7 +58,7 @@ public class ListTest1Adaper extends BaseAdapter {
         }
 
         viewHolder.textView1.setText("item");
-        viewHolder.textView2.setText("-" + (1 + position));
+        viewHolder.textView2.setText("-" + position);
 
         return convertView;
     }
