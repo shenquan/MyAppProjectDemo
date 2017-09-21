@@ -3,6 +3,7 @@ package com.example.module1.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Button;
@@ -17,13 +18,22 @@ public class Module1Activity1 extends AppCompatActivity {
 
     private ListView listView;
     private Context context;
-    private int sizeOfListView = 5;
+    private int sizeOfListView = 15;
+
+    private EditText editText;
+    private Button button;
+    private ListTest1Adaper adapter;
+    private LayoutInflater inflater;
+    private View header1;
+    private View header2;
+    private View footer1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module1_activity1_layout);
         context = this;
+        inflater = LayoutInflater.from(context);
 
         initIndex();
     }
@@ -55,16 +65,21 @@ public class Module1Activity1 extends AppCompatActivity {
         return result;
     }
 
-    private EditText editText;
-    private Button button;
-    private ListTest1Adaper adapter;
-
     private void initIndex() {
 
         editText = (EditText) findViewById(R.id.et);
         button = (Button) findViewById(R.id.bt);
 
         listView = (ListView) findViewById(R.id.list);
+
+        header1 = inflater.inflate(R.layout.listview_header_1, null);
+        header2 = inflater.inflate(R.layout.listview_header_2, null);
+        footer1 = inflater.inflate(R.layout.listview_footer_1, null);
+
+        listView.addHeaderView(header1);
+        listView.addHeaderView(header2);
+        listView.addFooterView(footer1);
+
         adapter = new ListTest1Adaper(context, sizeOfListView);
         listView.setAdapter(adapter);
 
@@ -110,6 +125,8 @@ public class Module1Activity1 extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 }
