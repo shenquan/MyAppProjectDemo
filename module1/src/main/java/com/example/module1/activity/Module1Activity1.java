@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.hsqbusiness.util.AndroidUtil;
 import com.example.module1.R;
@@ -18,7 +20,7 @@ public class Module1Activity1 extends AppCompatActivity {
 
     private ListView listView;
     private Context context;
-    private int sizeOfListView = 15;
+    private int sizeOfListView = 10;
 
     private EditText editText;
     private Button button;
@@ -27,6 +29,10 @@ public class Module1Activity1 extends AppCompatActivity {
     private View header1;
     private View header2;
     private View footer1;
+    private View suspendBar;
+    private FrameLayout frameLayout;
+
+    private int testNum = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +71,18 @@ public class Module1Activity1 extends AppCompatActivity {
         return result;
     }
 
+    private TextView suspendBarTv;
+
     private void initIndex() {
 
         editText = (EditText) findViewById(R.id.et);
         button = (Button) findViewById(R.id.bt);
-
-        listView = (ListView) findViewById(R.id.list);
+        frameLayout = (FrameLayout) findViewById(R.id.frame_layout);
+        listView = (ListView) findViewById(R.id.list_view);
+        suspendBar = inflater.inflate(R.layout.listview_header_2, null);
+        suspendBarTv = (TextView) suspendBar.findViewById(R.id.bar_tv);
+        suspendBar.setVisibility(View.GONE);
+        frameLayout.addView(suspendBar);
 
         header1 = inflater.inflate(R.layout.listview_header_1, null);
         header2 = inflater.inflate(R.layout.listview_header_2, null);
@@ -84,15 +96,16 @@ public class Module1Activity1 extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         editText.setText(listView.getCount() + "");//初始化edittext
+        listView.perf
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView absListView, int i) {
                 switch (i) {
-                    case SCROLL_STATE_IDLE:
+                    case SCROLL_STATE_IDLE: {
                         boolean flag = isListViewReachBottomEdge(absListView);
                         if (flag) {
-                            if (sizeOfListView > 50) {
+                            if (sizeOfListView >= 40) {
                                 AndroidUtil.showToast(context, "没有更多资源了~");
                                 return;
                             }
@@ -101,14 +114,24 @@ public class Module1Activity1 extends AppCompatActivity {
                             adapter.notifyDataSetChanged();
 
                             editText.setText(sizeOfListView + "");
-                            AndroidUtil.showToast(context, "滑动到底部，加载更多");
+                            AndroidUtil.showToast(context, "滑动到底部，加载更多~");
                         }
                         break;
+                    }
                 }
             }
 
             @Override
             public void onScroll(AbsListView absListView, int i, int i1, int i2) {
+//                MyLogUtil.e("滑动了" + (++testNum));
+//                MyLogUtil.e("header2 margin" + header2.getTop());
+                int header2Top = header2.getTop();
+                if (header2Top <= 0) {
+                    suspendBar.setVisibility(View.VISIBLE);
+                } else {
+                    suspendBar.setVisibility(View.GONE);
+                }
+
             }
         });
 
@@ -125,6 +148,48 @@ public class Module1Activity1 extends AppCompatActivity {
 
             }
         });
+
+        header2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = (TextView) header2.findViewById(R.id.tv1);
+                textView.setText("点击了改变了数值：" + (testNum++));
+
+            }
+        });
+        /*listView.setOnHierarchyChangeListener(new ViewGroup.OnHierarchyChangeListener() {
+            @Override
+            public void onChildViewAdded(View parent, View child) {
+                MyLogUtil.e("onChildViewAdded执行");
+            }
+
+            @Override
+            public void onChildViewRemoved(View parent, View child) {
+                MyLogUtil.e("onChildViewRemoved执行");
+                frameLayout.addView(header2);//不行
+            }
+        });*/
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //直接加的方法会报异常，所以要先gone掉原来的
+                //The specified child already has a parent. You must call removeView() on the child's parent first.
+//                listView.removeHeaderView(header2);
+                frameLayout.addView(header2);
+            }
+        }, 1000);*/
+        /*header2.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(View v) {
+                MyLogUtil.e("onViewAttachedToWindow执行");
+            }
+
+            @Override
+            public void onViewDetachedFromWindow(View v) {
+                MyLogUtil.e("onViewDetachedFromWindow哈哈");
+                frameLayout.addView(header2);//这个方法不行
+            }
+        });*/
 
 
     }

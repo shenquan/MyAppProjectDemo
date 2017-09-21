@@ -44,12 +44,39 @@
         android:dividerHeight="0dp"
         android:listSelector="@android:color/transparent"
         android:scrollbars="none" />-->
-    <ListView
-        android:id="@+id/list"
+    <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tv"
-        android:background="#9875"
-        android:scrollbars="none" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/bar_ll"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#861"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/bar_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我是悬浮条"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv"
+            android:background="#999"
+            android:scrollbars="none" />
+
+
+    </FrameLayout>
+
 
 </LinearLayout>
