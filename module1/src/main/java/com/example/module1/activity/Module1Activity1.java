@@ -96,7 +96,6 @@ public class Module1Activity1 extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         editText.setText(listView.getCount() + "");//初始化edittext
-        listView.perf
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
