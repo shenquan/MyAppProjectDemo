@@ -28,7 +28,7 @@ public class Module0MainActivity extends BaseActivity {
     private Context mContext;
     private TextView mTextMessage;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -36,7 +36,7 @@ public class Module0MainActivity extends BaseActivity {
             //在library project中不能使用switch
             //http://tools.android.com/tips/non-constant-fields
             //https://stackoverflow.com/questions/15247606/intellij-android-java-constant-expression-required-on-case-r-id-viewid
-            /*switch (item.getItemId()) {
+            *//*switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.module0_title_home);
                     return true;
@@ -46,7 +46,7 @@ public class Module0MainActivity extends BaseActivity {
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.module0_title_notifications);
                     return true;
-            }*/
+            }*//*
 
             int id = item.getItemId();
             if (R.id.navigation_home == id) {
@@ -63,7 +63,7 @@ public class Module0MainActivity extends BaseActivity {
             return false;
         }
 
-    };
+    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,8 +102,8 @@ public class Module0MainActivity extends BaseActivity {
 
             }
         });
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         TextView tv2 = (TextView) findViewById(R.id.tv2);
         tv2.setOnClickListener(new View.OnClickListener() {

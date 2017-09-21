@@ -52,7 +52,8 @@
             android:allowTaskReparenting="true"
             android:configChanges="locale|layoutDirection|fontScale|orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="hsq" />
                 <category android:name="android.intent.category.DEFAULT" />
