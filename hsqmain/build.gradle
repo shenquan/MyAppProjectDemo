@@ -143,6 +143,7 @@ dependencies {
     compile project(':module1')
     compile project(':hsqmvpmodule')
     compile project(':kotlinmodule')
+    compile project(':scrollwebviewdemo')
 }
 
 

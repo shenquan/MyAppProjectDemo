@@ -32,6 +32,13 @@ public class BundleConfigFactory {
                 BundleConfigModel.BundleLoadType.AutoLoad,
                 true
         ));
+        bundleConfigModels.add(new BundleConfigModel(
+                "scrollDemo",
+                "com.example.scrollwebviewdemo",
+                "com.example.scrollwebviewdemo.bus.ModuleBus",
+                BundleConfigModel.BundleLoadType.AutoLoad,
+                true
+        ));
 
     }
 

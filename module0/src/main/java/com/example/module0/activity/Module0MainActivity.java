@@ -4,9 +4,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -109,7 +106,7 @@ public class Module0MainActivity extends BaseActivity {
         tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //用json传第三个参数：new JSONObject().toString()
+                //可以用json传第三个参数：new JSONObject().toString()
                 Bus.callData(mContext, "module1/goMain");
             }
         });
@@ -166,8 +163,17 @@ public class Module0MainActivity extends BaseActivity {
             }
         });
 
+        TextView tv5 = (TextView) findViewById(R.id.tv5);
+        tv5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bus.callData(mContext, "scrollDemo/goMain");
+            }
+        });
+
 
     }
+
     private View vv;
 
     @Subscribe(threadMode = ThreadMode.MAIN)
