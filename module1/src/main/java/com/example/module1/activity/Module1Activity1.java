@@ -1,10 +1,14 @@
 package com.example.module1.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -189,6 +193,25 @@ public class Module1Activity1 extends AppCompatActivity {
                 frameLayout.addView(header2);//这个方法不行
             }
         });*/
+
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                    // 当按了搜索之后关闭软键盘
+                    ((InputMethodManager) editText.getContext().getSystemService(
+                            Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(
+                            ((Activity) context).getCurrentFocus().getWindowToken(),
+                            InputMethodManager.HIDE_NOT_ALWAYS);
+                    //设置值
+                    sizeOfListView = Integer.parseInt(editText.getText().toString());
+                    adapter.setData(sizeOfListView);
+                    adapter.notifyDataSetChanged();
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
     }

@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="1：点击我跳转测试页面"
+                    android:text="点击我跳转测试页面"
                     android:textSize="20sp" />
 
                 <TextView
@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="2：点击使用总线跳转至module1中的Activity"
+                    android:text="点击使用总线跳转至module1中的Activity"
                     android:textSize="20sp" />
 
                 <TextView
@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="3：点击使用总线跳转至KotlinModule"
+                    android:text="点击使用总线跳转至KotlinModule"
                     android:textSize="20sp" />
 
                 <TextView
@@ -51,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="4：滑动冲突悬停Demo"
+                    android:text="滑动冲突悬停Demo"
                     android:textSize="20sp" />
 
                 <TextView
@@ -59,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="5：ScrollView Webview滑动冲突悬停Demo"
+                    android:text="ScrollView Webview滑动冲突悬停Demo"
                     android:textSize="20sp" />
 
                 <!--方式1-->

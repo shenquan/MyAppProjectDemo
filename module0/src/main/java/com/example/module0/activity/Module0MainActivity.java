@@ -148,6 +148,7 @@ public class Module0MainActivity extends BaseActivity {
         }*/
 
         TextView tv4 = (TextView) findViewById(R.id.tv4);
+        tv4.setVisibility(View.GONE);
         tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
