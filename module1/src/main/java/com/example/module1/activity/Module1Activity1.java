@@ -50,27 +50,31 @@ public class Module1Activity1 extends AppCompatActivity {
 
     public boolean isListViewReachBottomEdge(final AbsListView listView) {
         boolean result = false;
-        int listViewWholeHeight = listView.getHeight();
-        //listview中当前可见的最后一个item的位置
-        int visiableItem = listView.getLastVisiblePosition() - listView.getFirstVisiblePosition();
-        //如果最后item的高度小于listview的高度，说明个数较少没有填充满listview，则返回false
+        try {
+            int listViewWholeHeight = listView.getHeight();
+            //listview中当前可见的最后一个item的位置
+            int visiableItem = listView.getLastVisiblePosition() - listView.getFirstVisiblePosition();
+            //如果最后item的高度小于listview的高度，说明个数较少没有填充满listview，则返回false
 
-        //listView.getChildAt()中的数量不能超过listview一屏幕中最多显示的个数，因为是复用的view
+            //listView.getChildAt()中的数量不能超过listview一屏幕中最多显示的个数，因为是复用的view
 //        ListView.getCount()（实际上是 AdapterView.getCount()） 返回的是其 Adapter.getCount() 返回的值。也就是“所包含的 Item 总个数”。
 //        ListView.getChildCount()（ViewGroup.getChildCount） 返回的是显示层面上的“所包含的子 View 个数”。
-        //方法一
-        /*if (listView.getChildAt(visiableItem).getBottom() < listViewWholeHeight) {
+            //方法一：推荐使用
+            if (listView.getChildAt(visiableItem).getBottom() < listViewWholeHeight) {
+                return false;
+            }
+            //方法二,当5-8个左右时，下滑到底部不加载。。
+        /*if (listView.getCount() <= listView.getChildCount()) {
             return false;
         }*/
-        //方法二：推荐使用
-        if (listView.getCount() <= listView.getChildCount()) {
-            return false;
-        }
-        if (listView.getLastVisiblePosition() == (listView.getCount() - 1)) {
-            final View bottomChildView = listView.getChildAt(visiableItem);
-            //当前可见的最底部的view的底部距离父控件(该listview)顶部的高度（不是滚动高度）
-            int bottomChildViewHeight = bottomChildView.getBottom();
-            result = (listViewWholeHeight >= bottomChildViewHeight);
+            if (listView.getLastVisiblePosition() == (listView.getCount() - 1)) {
+                final View bottomChildView = listView.getChildAt(visiableItem);
+                //当前可见的最底部的view的底部距离父控件(该listview)顶部的高度（不是滚动高度）
+                int bottomChildViewHeight = bottomChildView.getBottom();
+                result = (listViewWholeHeight >= bottomChildViewHeight);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }
