@@ -90,6 +90,14 @@
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true" />
 
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="打开联系人通讯录"
+                    android:textSize="20sp" />
+
             </LinearLayout>
         </FrameLayout>
 
