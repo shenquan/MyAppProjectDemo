@@ -40,10 +40,10 @@ android {
             signingConfig signingConfigs.debug
             buildConfigField "String", "API_URL", "\"debugString\""
             //为已经存在的applicationId添加后缀
-            applicationIdSuffix ".debug"
+//            applicationIdSuffix ".debug"
             // 为版本名添加后缀
             versionNameSuffix "-debug"
-            resValue "string", "app_name_in_gradle", "DemoDeb版"
+            resValue "string", "app_name_in_gradle", "HsqApp"
         }
         release {
             minifyEnabled false
@@ -52,7 +52,7 @@ android {
             buildConfigField "String", "API_URL", "\"releaseString\""
             // 为版本名添加后缀
             versionNameSuffix "-release"
-            resValue "string", "app_name_in_gradle", "DemoRel版"
+            resValue "string", "app_name_in_gradle", "HsqApp"
         }
         /*staging123.initWith(buildTypes.debug)
         staging {
